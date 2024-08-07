@@ -356,6 +356,8 @@ $primary:#03A9F4;
 
 
 
+ng g c mattabledemo
+
 # Mat-Table 
 **App.module.ts**
 import { MatTableModule } from '@angular/material/table';
@@ -404,8 +406,11 @@ const ELEMENT_DATA: PeriodicElement[] = [
 ];
 @Component({
   selector: 'app-tabledemo',
+   standalone: true,
+  imports: [MatTableModule, MatSortModule, MatPaginatorModule],
   templateUrl: './tabledemo.component.html',
   styleUrl: './tabledemo.component.css',
+
 })
 export class TabledemoComponent {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
